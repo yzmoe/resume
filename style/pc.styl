@@ -1,0 +1,329 @@
+/*设置公共样式*/
+*
+  box-sizing:border-box
+body
+  font-size: 16px
+  font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif
+  min-width:1200px
+a
+  text-decoration: none
+ul
+  padding: 0
+  list-style: none
+.container
+  max-width:1200px
+  width:90%
+  margin: 0 auto
+@keyframes keke
+  0%
+    transform:scale(1)
+  100%
+    transform:scale(1.2)
+
+@keyframes coco
+  0%
+    transform:scale(1.2)
+  100%
+    transform:scale(1)
+/*导航条开始*/
+header
+  background-color: rgba(0, 0, 0, 0)
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  z-index: 100
+  transition: all .5s
+  .container
+    display: flex
+    height: 8vh
+    justify-content: space-between
+    align-items: center
+    transition: all .5s
+    h1
+      color: #fed136
+      cursor: pointer
+    nav
+      width: 200px
+      display: flex
+      justify-content: space-around
+      a
+        text-decoration: none
+        color: #fff
+        font-weight: 800
+        height: 60px
+        line-height: 60px
+      a:hover
+        color: #fed136
+    span
+      display: none
+  &.active
+    background-color: #222
+    .container
+      height: 6vh
+/*导航结束*/
+
+
+/*信息区开始*/
+.info
+  position: relative
+  .img
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    background-image: url(../img/1.jpg)
+    background-size: cover
+    z-index: -2
+  .cover
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    z-index: -1
+    background-color: rgba(0, 0, 0, 0.7)
+  .container
+    display: flex
+    flex-direction: column
+    justify-content: center
+    min-height: 100vh
+    height:100vh
+    color: #fff
+/*信息区结束*/
+
+
+/*作品展示区开始*/
+.portfolio
+  background-color: #f7f7f7
+  .container
+    display: flex
+    flex-direction: column
+    min-height: 100vh
+    height:100vh
+    hgroup
+      margin-top: 8vh
+      text-align: center
+      h3
+        font-size: 16px
+        font-weight: 200
+        font-style: italic
+    .portfolio-list
+      display: flex
+      justify-content: space-around
+      flex-wrap: wrap
+      flex-grow: 1
+      .portfolio-item
+        flex-basis:30%
+        opacity:0
+        transform-origin:left bottom
+        transition:all 1s
+        &:nth-child(1),&:nth-child(2),&:nth-child(3)
+          transform:translateY(200px)
+        &:nth-child(4),&:nth-child(5)
+          transform:translateY(-200px)
+        &.active
+          transform:translateY(0)
+          opacity:1
+        a
+          display: block
+          height: 300px
+          color: #000
+          overflow: hidden
+          box-shadow: 0 2px 3px 0 #ddd
+          .img
+            width: 100%
+            height: 250px
+            background-size:cover
+            background-position:center center
+          .desc
+            padding: 14px
+            height: 200px
+            background: rgba(255, 255, 255, .98)
+            transition: all 1s
+            h3
+              margin: 0
+            .intro
+              color:#93999F
+        &:nth-child(1)
+          .img
+            background-image:url('../img/portfolio1.png')
+        &:nth-child(2)
+          .img
+            background-image:url('../img/portfolio2.png')
+        &:nth-child(3)
+          .img
+            background-image:url('../img/portfolio3.png')
+        &:nth-child(4)
+          .img
+            background-image:url('../img/portfolio4.png')
+        &:nth-child(5)
+          .img
+            background-image:url('../img/portfolio5.png')
+        &:hover
+          a
+            box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1)
+            .desc
+              transform: translateY(-100px)
+        &:nth-child(4):hover,&:nth-child(5):hover
+          .desc
+            transform: translateY(-130px)
+/*作品展示区结束*/
+
+
+/*技能展示区开始*/
+.skill
+  .container
+    display: flex
+    flex-direction: column
+    min-height: 100vh
+    height:100vh
+    hgroup
+      margin-top: 8vh
+      text-align: center
+      h3
+        font-size: 16px
+        font-weight: 200
+        font-style: italic
+    .skill-list
+      flex-grow: 1
+      display: flex
+      align-items:baseline
+      .skill-item
+        flex-basis: 25%
+        text-align: center
+        padding: 30px
+        .icon
+          opacity:0
+          transform:translateY(-200px)
+          transition:all 0.8s ease-out
+          span
+            font-size: 100px
+        .text
+          text-align: justify
+          font-size: 20px
+          opacity:0
+          transform:translateY(200px)
+          transition-property:all
+          transition-duration:0.8s
+        &:nth-of-type(1)
+          .icon,.text
+            transition-delay:0s
+        &:nth-of-type(2)
+          .icon,.text
+            transition-delay:0.5s
+        &:nth-of-type(3)
+          .icon,.text
+            transition-delay:1s
+        &:nth-of-type(4)
+          .icon,.text
+            transition-delay:1.5s
+        &.active
+          .icon,.text
+            opacity:1
+            transform:translateY(0)
+
+/*技能展示区结束*/
+
+
+/*联系区开始*/
+.contact
+  background-color: #f7f7f7
+  .container
+    display: flex
+    flex-direction: column
+    min-height: 100vh
+    height:100vh
+    hgroup
+      margin-top: 8vh
+      text-align: center
+      h3
+        font-size: 16px
+        font-weight: 200
+        font-style: italic
+    .contact-list
+      flex-grow: 1
+      display: flex
+      flex-wrap: wrap
+      justify-content: center
+      align-items: center
+      position: relative
+      .contact-item
+        transition-property:all
+        transition-duration:0.7s
+        opacity:0
+        &:nth-of-type(3)
+          transform:translateY(-200px)
+          transition-delay:0s
+        &:nth-of-type(4)
+          transform:translateY(-100px)
+          transition-delay:0.5s
+        &:nth-of-type(5)
+          transition-delay:1s
+        &:nth-of-type(6)
+          transform:translateY(100px)
+          transition-delay:0.5s
+        &:nth-of-type(7)
+          transform:translateY(200px)
+          transition-delay:0s
+        &.active
+          transform:translateY(0)
+          opacity:1
+        span
+          display: block
+          width: 100px
+          height: 100px
+          border-radius: 50%
+          font-size: 70px
+          background-color: #64c5d6
+          text-align: center
+          line-height: 100px
+          margin: 20px
+          color: #fff
+          position: relative
+          .cover
+            position: absolute
+            top: 0
+            right: 0
+            bottom: 0
+            left: 0
+            border-radius: 100%
+            background-color: rgba(0, 0, 0, 0.15)
+            transition: all .5s
+          &.icon-book
+            background-color: #e7ab99
+          &.icon-github
+            color: #000
+            background-color: #dfdfdf
+          &.icon-wechat
+            background-color: #62b900
+          &.icon-QQ
+            background-color: #4da7de
+          &.icon-phone
+            background-color: #30c68b
+        &:hover
+          .cover
+            background-color: rgba(0, 0, 0, 0)
+      .item-phone,.item-message
+        display: none
+      img
+        width: 200px
+        height: 200px
+        position: absolute
+        left: 50%
+        top: 0px
+        margin-left: -100px
+        opacity:0
+        transition:all 0.8s cubic-bezier(.95,1.04,.92,1.13)
+        &:nth-of-type(1)
+          transform:translateX(-500px)
+          &.active
+            transform:translateX(0)
+            opacity:1
+        &:nth-of-type(2)
+          transform:translateX(500px)
+          &.active
+            transform:translateX(0)
+            opacity:1
+/*联系区结束*/
